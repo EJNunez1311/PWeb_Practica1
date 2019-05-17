@@ -8,8 +8,6 @@ import java.io.IOException;
         public class Main {
             public static void main(String[] args) throws IOException {
                 System.out.println("Hola Mundo Java");
-                Scanner scanner = new Scanner(System.in);
-                char op;
                 Document doc = Jsoup.connect("http://en.wikipedia.org/").get();
                 log(doc.title());
                 Elements newsHeadlines = doc.select("#mp-itn b a");
