@@ -16,13 +16,13 @@ import java.io.IOException;
 
                 while (true) {
                     System.out.print("------------------------------------------------------ \n");
-                    System.out.print("Seleccione:\na) Indicar la cantidad de lineas del recurso retornado.\n" +
-                            "b) Indicar la cantidad de parrafos (p) que contiene el documento HTML.\n" +
-                            "c) Indicar la cantidad de imagenes (img) dentro de los parrafos que contiene el archivo HTML.\n" +
-                            "d) Indicar la cantidad de formularios (form) que contiene el HTML por categorizando por el metodo implementado POST o GET.\n" +
-                            "e) Para cada formulario mostrar los campos del tipo input y su respectivo tipo que contiene en el documento HTML.\n" +
-                            "f) Para cada formulario,identificar que el metodo de envio del formulario sea POST y enviar una peticion al servidor con el parametro llamado asignatura y valor practica1 y un header llamado matricula con el valor correspondiente a matricula asignada. Debe mostrar la respuesta por la salida estandar.\n" +
-                            "s) Salir\nSeleccion: ");
+                    System.out.print("Eliga una opcion:\na) Mostrar la cantidad de lineas del recurso retornado.\n" +
+                            "b) Cantidad de parrafos (p) que contiene el documento HTML.\n" +
+                            "c) Cantidad de imagenes (img) dentro de los parrafos que contiene el archivo HTML.\n" +
+                            "d) Cantidad de formularios (form) que contiene el HTML por categorizando por el metodo implementado POST o GET.\n" +
+                            "e) Mostrar los campos del tipo input y su respectivo tipo que contiene en el documento HTML.\n" +
+                            "f) Identificar de metodo de envio de formulario y enviar una peticion al servidor .\n" +
+                            "q) Salir\nSeleccion: ");
                     op = scanner.next().toUpperCase().charAt(0);
                     switch (op) {
                         case 'A':
@@ -43,7 +43,7 @@ import java.io.IOException;
                         case 'F':
                             tareas.parteF();
                             break;
-                        case 'S':
+                        case 'Q':
                             System.exit(0);
                             break;
                         default:
