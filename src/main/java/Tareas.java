@@ -3,8 +3,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
+
 
 public class Tareas {
     Document doc;
@@ -20,8 +20,10 @@ public class Tareas {
         }
     }
 
-    public void parteA() {
-        System.out.println("A) Cantidad de lineas: " + doc.html().split("\n").length + "\n");
+    public void parteA() throws IOException{
+        Connection.Response Doc = Jsoup.connect(ur).execute();
+        String cuerpo = Doc.body();
+        System.out.println("A) Cantidad de lineas: " + cuerpo.split("\n").length + "\n");
     }
 
     public void parteB() {
@@ -35,8 +37,10 @@ public class Tareas {
 
     public void parteC() {
         Elements img = doc.getElementsByTag("img");
+        Elements p = doc.getElementsByTag("p");
         int cont = 0;
-        for (Element im : img) {
+        for (Element pa : p) {
+            if (pa.toString().contains("img"))
             cont++;
         }
         System.out.println("C) Cantidad de imagenes <img> : " + cont + "\n");
